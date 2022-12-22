@@ -24,10 +24,15 @@ let num = numList.find(num => num === 2);
 let sum = numList.reduce((acc, num) => acc + num);
 console.log(results, num, sum);
 let c = 2 /* Color.Blue */;
-//tuple
+// tuple
 let swapNumbs;
 function swapNumbers(num1, num2) {
     return [num2, num1];
 }
 swapNumbs = swapNumbers(10, 20);
 console.log(swapNumbs);
+// any
+// Try to avoid any
+let department;
+department = 'IT';
+department = 10;

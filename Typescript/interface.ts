@@ -58,3 +58,11 @@ console.log(result);
 
 //     }
 // }
+
+// * Modifying tsconfig.json
+/**
+ * Enable outDir and change the path to send the tsc files created to another dir
+ * Enable sourceMap to debug typescript. Redirects you to the ts file instead of the js
+ * Enable noEmmit to avoid creating js files
+ * 
+ */

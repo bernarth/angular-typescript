@@ -1,10 +1,12 @@
+import { Login, User } from './interface';
+
 // Creating Classes
 // Follow a Pascal convention
 // * If we don't wan to assign add ! (i.e. name!: string;)
 // * To define a private property I can use '#' or 'private'
 // * By default all memebers are public
 // * To define a protected memeber write protected
-class Employee {
+class Employee implements Login{
     // Class Properties and constructor
     // Member Visibility
     #id: number;
@@ -35,6 +37,11 @@ class Employee {
 
     set empId(id: number) {
         this.#id = id;
+    }
+
+    // Implementing interface
+    login(): User {
+        return {  id: 1, name: 'Alberth', email: 'alberth@email.com'};
     }
 }
 

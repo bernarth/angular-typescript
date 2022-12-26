@@ -11,6 +11,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _Employee_id;
+Object.defineProperty(exports, "__esModule", { value: true });
 // Creating Classes
 // Follow a Pascal convention
 // * If we don't wan to assign add ! (i.e. name!: string;)
@@ -41,6 +42,10 @@ class Employee {
     }
     set empId(id) {
         __classPrivateFieldSet(this, _Employee_id, id, "f");
+    }
+    // Implementing interface
+    login() {
+        return { id: 1, name: 'Alberth', email: 'alberth@email.com' };
     }
 }
 _Employee_id = new WeakMap();

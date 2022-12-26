@@ -51,3 +51,10 @@ console.log(result);
 // Decorators are something just in typescript
 // With decorators you can modify the behavior of your class at runtime.
 // You may need to add them in typescript rules
+
+// @Component({})
+// class Component {
+//     constructor(public name: string) {
+
+//     }
+// }

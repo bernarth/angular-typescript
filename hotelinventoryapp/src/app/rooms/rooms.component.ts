@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent {
+  hotelName = 'Hilton Hotel';
+  numberOfRooms = 10;
 
+  constructor() {}
 }

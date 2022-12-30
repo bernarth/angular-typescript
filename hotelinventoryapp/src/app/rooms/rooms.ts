@@ -13,6 +13,7 @@ export interface RoomList {
   photos: string;
   checkinTime: Date;
   checkoutTime: Date;
+  raiting: number;
 }
 
 // This interface will have some rooms information

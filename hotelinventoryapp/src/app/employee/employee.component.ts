@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee.component.scss']
 })
 export class EmployeeComponent {
-
+  empName: string = 'John';
 }

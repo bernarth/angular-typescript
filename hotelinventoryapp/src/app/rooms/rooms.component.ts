@@ -1,4 +1,5 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, DoCheck, OnInit, ViewChild } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
 import { Room, RoomList } from './rooms';
 
 @Component({
@@ -6,7 +7,7 @@ import { Room, RoomList } from './rooms';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent implements OnInit, DoCheck {
+export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterViewChecked {
   hotelName = 'Hilton Hotel';
   numberOfRooms = 10;
   hideRooms = false;
@@ -21,13 +22,30 @@ export class RoomsComponent implements OnInit, DoCheck {
   title = 'Room List';
   roomList: RoomList[] = [];
 
+  // When static true it is said to be load in ngOnInit parent
+  // when you have some asyncrounous code make static false to
+  // avoid following the parent's lifecycle
+  // @ViewChild(HeaderComponent, {static: true}) headerComponent!: HeaderComponent;
+  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
+
   constructor() {}
 
   ngDoCheck(): void {
     console.log('do check is called');
   }
 
+  ngAfterViewInit(): void {
+    console.log(this.headerComponent);
+    this.headerComponent.title = 'Rooms View';
+  }
+
+  ngAfterViewChecked(): void {
+    // this will be executed whenever there is a change
+    // this.headerComponent.title = 'Rooms View';
+  }
+
   ngOnInit(): void {
+    console.log(this.headerComponent);
     this.roomList = [
       {
         roomNumber: 1,
